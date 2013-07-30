@@ -1,0 +1,16 @@
+public class Solution {
+    public int maxProfit(int[] prices) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        
+        int min = 0;
+        int gap = 0;
+        
+        for(int i = 0; i < prices.length; i++) {
+             if(prices[i] < prices[min]) min = i;
+            if(prices[i] - prices[min] > gap) gap = prices[i] - prices[min];
+        }
+        return gap;
+        
+    }
+}
